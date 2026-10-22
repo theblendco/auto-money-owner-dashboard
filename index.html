@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Auto Money · Owner's Dashboard (demo)</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap topin">
+    <div class="brand">
+      <span class="logo"><img src="logo.png" alt="Auto Money" width="168" height="45"></span>
+      <div class="ttl">
+        <h1>Owner's Dashboard</h1>
+        <p id="sub">Charleston area · 11 stores</p>
+      </div>
+    </div>
+    <div class="topr">
+      <span class="badge" title="All numbers on this page are sample data for a demo">Sample data: demo</span>
+      <div class="seg" role="tablist" aria-label="Time range">
+        <button type="button" role="tab" data-range="today" class="on" aria-selected="true">Today</button>
+        <button type="button" role="tab" data-range="mtd" aria-selected="false">Month to date</button>
+      </div>
+      <div class="asof" id="asof"></div>
+    </div>
+  </div>
+  <div class="wrap hero" id="hero"></div>
+</header>
+
+<main class="wrap">
+  <section class="row two">
+    <div class="card" id="alertsCard">
+      <div class="ch"><h2>Needs attention</h2><span class="cnt" id="alertCount"></span></div>
+      <ul class="alerts" id="alerts"></ul>
+      <div class="ssum" id="statusSum" aria-label="Stores by status"></div>
+    </div>
+    <div class="card mapcard">
+      <div class="ch"><h2>Charleston area</h2><span class="hint">Dot size = funded volume · tap a store</span></div>
+      <div id="map" class="map"></div>
+      <div class="legend"><span><i class="dot ok"></i>On track</span><span><i class="dot watch"></i>Watch</span><span><i class="dot help"></i>Needs help</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="ch wrapit">
+      <h2>Manager scorecard <span class="sub2">ranked</span></h2>
+      <div class="tools">
+        <input id="q" type="search" placeholder="Search store, city or manager" aria-label="Search stores">
+        <select id="statusF" aria-label="Filter by status">
+          <option value="">All statuses</option><option value="ok">On track</option><option value="watch">Watch</option><option value="help">Needs help</option>
+        </select>
+      </div>
+    </div>
+    <p class="swipe">Swipe the table sideways for every column. Tap a store for details.</p>
+    <div class="tblwrap"><table class="tbl" id="score"><thead></thead><tbody></tbody></table></div>
+    <p class="fine">Manager names are sample placeholders, not real people. Store names and addresses are real.</p>
+  </section>
+
+  <section class="grpwrap" id="groups"></section>
+
+  <section class="row three">
+    <div class="card"><div class="ch"><h2>Lead funnel</h2><span class="hint" id="funnelHint"></span></div><div id="funnel"></div></div>
+    <div class="card"><div class="ch"><h2>Where leads come from</h2></div><div id="sources"></div></div>
+    <div class="card"><div class="ch"><h2>Loan sizes funded</h2></div><div id="sizes"></div></div>
+  </section>
+
+  <section class="card">
+    <div class="ch"><h2>What's driving this</h2><span class="hint">Each number ties back to a piece of the system</span></div>
+    <div class="drivers" id="drivers"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span class="badge sm">Sample data: demo</span>
+  <p>Illustrative demo · sample data · Built by The Fifth Charleston</p>
+  <p class="fine">Store names and addresses from automoneytitle.com. Every number, name and dollar figure is sample data.</p>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dTitle" tabindex="-1"></aside>
+
+<script src="stores.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
